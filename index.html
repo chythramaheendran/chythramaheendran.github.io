@@ -84,9 +84,9 @@ nav {
   width: 32px; height: 2px; background: var(--accent);
 }
 .hero-name {
-  font-family: var(--fd); font-size: clamp(44px, 7vw, 86px);
+  font-family: var(--fd); font-size: clamp(32px, 5vw, 58px);
   font-weight: 800; line-height: 1.02; letter-spacing: -2px;
-  color: var(--ink); margin-bottom: 8px;
+  color: var(--ink); margin-bottom: 8px; letter-spacing:-1px;
 }
 .hero-name .accent-word { color: var(--accent); }
 .hero-role {
@@ -99,86 +99,6 @@ nav {
   max-width: 600px; margin-bottom: 48px;
 }
 .hero-intro strong { font-weight: 600; }
-
-/* ── TERMINAL BLOCK (signature element) ── */
-.terminal {
-  background: #0d0f14;
-  border-radius: 12px;
-  padding: 20px 24px;
-  max-width: 600px;
-  margin-bottom: 48px;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 8px 40px rgba(124,106,247,.18), 0 2px 8px rgba(0,0,0,.2);
-}
-.terminal-bar {
-  display: flex; align-items: center; gap: 6px; margin-bottom: 16px;
-}
-.terminal-dot {
-  width: 10px; height: 10px; border-radius: 50%;
-}
-.terminal-dot:nth-child(1) { background: #ff5f57; }
-.terminal-dot:nth-child(2) { background: #febc2e; }
-.terminal-dot:nth-child(3) { background: #28c840; }
-.terminal-line {
-  font-family: var(--fm); font-size: 13px; line-height: 1.8;
-  color: #9ca3af; margin-bottom: 2px;
-}
-.terminal-line .prompt { color: var(--accent); margin-right: 8px; }
-.terminal-line .cmd { color: #e5e7eb; }
-.terminal-line .out { color: #6b7280; font-style: italic; }
-.terminal-line .ok { color: #10b981; font-weight: 600; }
-.terminal-line .num { color: var(--accent2); font-weight: 600; }
-.terminal-cursor {
-  display: inline-block; width: 8px; height: 14px;
-  background: var(--accent); vertical-align: middle;
-  animation: blink 1s step-end infinite;
-}
-@keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
-
-/* ── CTA BUTTONS ── */
-.hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
-.btn-primary {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: var(--accent); color: #fff;
-  padding: 14px 28px; border-radius: 10px;
-  font-family: var(--fb); font-size: 15px; font-weight: 600;
-  transition: transform .15s, box-shadow .15s;
-  box-shadow: 0 4px 16px rgba(124,106,247,.35);
-}
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(124,106,247,.45); }
-.btn-secondary {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: var(--card); color: var(--ink);
-  padding: 14px 28px; border-radius: 10px;
-  font-family: var(--fb); font-size: 15px; font-weight: 600;
-  border: 1.5px solid var(--border);
-  transition: border-color .2s, transform .15s;
-}
-.btn-secondary:hover { border-color: var(--accent); transform: translateY(-2px); }
-
-/* ── STAT STRIP ── */
-.stat-strip {
-  background: var(--ink);
-  padding: 28px 0; overflow: hidden;
-}
-.stat-strip-inner {
-  display: flex; gap: 0;
-  max-width: 1100px; margin: 0 auto; padding: 0 48px;
-}
-.stat-item {
-  flex: 1; padding: 0 40px; text-align: center;
-  border-right: 1px solid rgba(255,255,255,.1);
-}
-.stat-item:first-child { padding-left: 0; }
-.stat-item:last-child { border-right: none; }
-.stat-num {
-  font-family: var(--fd); font-size: 32px; font-weight: 800;
-  color: var(--accent); display: block; line-height: 1;
-  margin-bottom: 6px;
-}
-.stat-label { font-size: 12px; color: rgba(255,255,255,.5);
-  text-transform: uppercase; letter-spacing: .06em; font-weight: 500; }
 
 /* ── SECTIONS ── */
 .section {
@@ -435,24 +355,12 @@ footer {
   display: flex; align-items: center; justify-content: space-between;
 }
 .footer-left { font-size: 13px; color: rgba(255,255,255,.3); }
-.footer-right {
-  display: flex; align-items: center; gap: 8px;
-  font-size: 13px; color: rgba(255,255,255,.3);
-}
-.claude-badge {
-  display: inline-flex; align-items: center; gap: 6px;
-  background: rgba(124,106,247,.15); border: 1px solid rgba(124,106,247,.3);
-  border-radius: 100px; padding: 4px 12px;
-  font-family: var(--fm); font-size: 11px; color: #c4b5fd;
-}
 
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   nav { padding: 16px 24px; }
   .nav-links { display: none; }
   .hero { padding: 100px 24px 60px; }
-  .stat-strip-inner { padding: 0 24px; gap: 0; overflow-x: auto; }
-  .stat-item { min-width: 130px; }
   .section { padding: 72px 24px; }
   .project-header { padding: 32px 28px 28px; }
   .data-grid { grid-template-columns: repeat(3, 1fr); }
@@ -499,75 +407,7 @@ footer {
     going from a raw Excel file to a deployed web app in a single session.
   </p>
 
-  <!-- SIGNATURE ELEMENT: terminal -->
-  <div class="terminal">
-    <div class="terminal-bar">
-      <div class="terminal-dot"></div>
-      <div class="terminal-dot"></div>
-      <div class="terminal-dot"></div>
-    </div>
-    <div class="terminal-line">
-      <span class="prompt">$</span>
-      <span class="cmd">extract --source Monthly_Expenses.xlsx --months 10</span>
-    </div>
-    <div class="terminal-line">
-      <span class="out">→ reading 12 sheets, 750 transactions...</span>
-    </div>
-    <div class="terminal-line">
-      <span class="out">→ fixing date serials, mapping null categories, preserving refunds...</span>
-    </div>
-    <div class="terminal-line">
-      <span class="ok">✓ reconciled 10/10 months to the rupee</span>
-    </div>
-    <div class="terminal-line" style="margin-top:6px">
-      <span class="prompt">$</span>
-      <span class="cmd">deploy --target firebase --platform web+mobile</span>
-    </div>
-    <div class="terminal-line">
-      <span class="out">→ seeding </span><span class="num">750</span>
-      <span class="out"> expenses → Firestore...</span>
-    </div>
-    <div class="terminal-line">
-      <span class="ok">✓ live at spendsync-56290.web.app</span>
-      <span class="terminal-cursor"></span>
-    </div>
-  </div>
-
-  <div class="hero-ctas">
-    <a href="#work" class="btn-primary">
-      <span>View SpendSync →</span>
-    </a>
-    <a href="#contact" class="btn-secondary">
-      <span>Get in touch</span>
-    </a>
-  </div>
 </section>
-
-<!-- STAT STRIP -->
-<div class="stat-strip">
-  <div class="stat-strip-inner">
-    <div class="stat-item">
-      <span class="stat-num">7+</span>
-      <span class="stat-label">Years Experience</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-num">4</span>
-      <span class="stat-label">Agile Teams Led</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-num">40+</span>
-      <span class="stat-label">Engineers Managed</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-num">20+</span>
-      <span class="stat-label">Releases Shipped</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-num">30%</span>
-      <span class="stat-label">Retrieval Efficiency ↑</span>
-    </div>
-  </div>
-</div>
 
 <!-- WORK / SPENDSYNC -->
 <section class="section" id="work">
@@ -872,10 +712,6 @@ footer {
 
 <footer>
   <div class="footer-left">© 2026 Chythra Maheendran</div>
-  <div class="footer-right">
-    Portfolio built with
-    <span class="claude-badge">✦ Claude · Anthropic</span>
-  </div>
 </footer>
 
 </body>
