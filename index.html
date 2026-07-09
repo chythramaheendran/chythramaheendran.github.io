@@ -23,7 +23,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;
   display:flex;align-items:center;justify-content:space-between;
   padding:20px 56px;background:rgba(250,249,247,.92);
   backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
-.nav-name{font-family:var(--fd);font-size:18px;font-weight:400;font-style:italic}
+.nav-name{font-family:var(--fd);font-size:22px;font-weight:700;font-style:italic}
 .nav-links{display:flex;gap:36px;align-items:center}
 .nav-links a{font-size:13px;font-weight:500;color:var(--muted);transition:color .2s}
 .nav-links a:hover{color:var(--ink)}
@@ -34,11 +34,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;
 .hero{max-width:960px;margin:0 auto;padding:160px 56px 100px;border-bottom:1px solid var(--rule)}
 .hero-label{font-family:var(--fm);font-size:11px;font-weight:500;color:var(--accent);
   letter-spacing:.12em;text-transform:uppercase;margin-bottom:28px}
-.hero-headline{font-family:var(--fd);font-size:clamp(36px,5.5vw,62px);
-  font-weight:300;line-height:1.08;letter-spacing:-.03em;color:var(--ink);margin-bottom:32px}
+.hero-headline{font-family:var(--fd);font-size:clamp(20px,2vw,24px);
+  font-weight:300;line-height:1.5;letter-spacing:-.01em;color:var(--ink);margin-bottom:32px}
 .hero-headline em{font-style:italic;font-weight:300}
 .hero-headline strong{font-weight:700;font-style:normal}
-.hero-body{font-size:17px;line-height:1.75;color:var(--muted);max-width:580px;margin-bottom:48px}
+.hero-body{font-size:17px;line-height:1.75;color:var(--muted);max-width:580px;margin-bottom:48px;margin-top:28px}
 .hero-body b{color:var(--ink);font-weight:600}
 .hero-meta{display:flex;gap:40px;flex-wrap:wrap;padding-top:40px;border-top:1px solid var(--rule)}
 .hero-meta-label{font-family:var(--fm);font-size:10px;color:var(--subtle);
@@ -192,11 +192,7 @@ footer{background:#111;padding:24px 56px;
 
 <div class="hero">
   <div class="hero-label">Product Manager · Bengaluru, India</div>
-  <h1 class="hero-headline">
-    I build products that<br>
-    <em>close the gap between</em><br>
-    <strong>strategy and shipped.</strong>
-  </h1>
+  <h1 class="hero-headline" style="display:none">I build products that <em>close the gap between</em> <strong>strategy and shipped.</strong></h1>
   <p class="hero-body">
     Senior PM with <b>7+ years</b> across software engineering and product — building enterprise SaaS products spanning HR tech, GenAI automation, and API integrations at <b>HashedIn by Deloitte</b>. I've led teams of 40+, shipped AI-powered tools, and most recently built and deployed a full-stack web application using Claude, going from a raw Excel file to a live multi-user expense tracker.
   </p>
@@ -215,7 +211,7 @@ footer{background:#111;padding:24px 56px;
     </div>
     <div class="hero-meta-item">
       <div class="hero-meta-label">Open to</div>
-      <div class="hero-meta-value">Senior PM · Head of Product</div>
+      <div class="hero-meta-value">Product Manager &amp; related roles</div>
     </div>
   </div>
 </div>
@@ -455,7 +451,7 @@ footer{background:#111;padding:24px 56px;
 
 <div class="contact-section" id="contact">
   <h2 class="contact-title">Let's build<br><em>something together</em></h2>
-  <p class="contact-sub">Open to senior PM and product leadership roles. Particularly interested in GenAI products, enterprise SaaS, and teams that value engineering depth.</p>
+  <p class="contact-sub">Open to Product Manager and related roles. Particularly interested in GenAI products, enterprise SaaS, and teams that value engineering depth.</p>
   <div class="contact-row">
     <a href="mailto:chythra.tm@gmail.com" class="contact-btn primary">✉ chythra.tm@gmail.com</a>
     <a href="https://linkedin.com/in/chythramaheendran" target="_blank" class="contact-btn secondary">LinkedIn →</a>
